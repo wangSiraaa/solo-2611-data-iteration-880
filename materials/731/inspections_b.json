@@ -1,0 +1,15 @@
+{
+  "jobs": [
+    {
+      "job_id": "J-B",
+      "route_id": "L",
+      "spans": [
+        {
+          "section_id": "P2",
+          "label_start": 350,
+          "label_end": 390
+        }
+      ]
+    }
+  ]
+}

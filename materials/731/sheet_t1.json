@@ -1,0 +1,10 @@
+{
+  "sheet_id": "T1",
+  "report_id": "R1",
+  "panel_id": "G1",
+  "panel_revision": "g1",
+  "entries": [
+    {"note_id": "N1", "strip_id": "S-pq", "asset_id": "P"},
+    {"note_id": "N2", "strip_id": "S-pq", "asset_id": "Q"}
+  ]
+}

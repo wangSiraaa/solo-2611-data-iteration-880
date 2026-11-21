@@ -1,0 +1,9 @@
+{
+  "line_id": "LN6",
+  "sheet_id": "T1",
+  "width": 10,
+  "forbidden": [],
+  "items": [
+    {"note_id": "N1", "required": true, "placements": [[9, 10]]}
+  ]
+}

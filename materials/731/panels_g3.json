@@ -1,0 +1,60 @@
+{
+  "panel_id": "G1",
+  "panel_revision": "g3",
+  "strips": [
+    {
+      "strip_id": "S-pq",
+      "catalog_revision": "r1",
+      "section_id": "P1",
+      "label_start": 0,
+      "label_end": 10,
+      "paper_start": 0,
+      "paper_end": 8
+    },
+    {
+      "strip_id": "S-pq-rev",
+      "catalog_revision": "r1",
+      "section_id": "P1",
+      "label_start": 0,
+      "label_end": 10,
+      "paper_start": 10,
+      "paper_end": 0
+    },
+    {
+      "strip_id": "S-b",
+      "catalog_revision": "r1",
+      "section_id": "P2",
+      "label_start": 350,
+      "label_end": 390,
+      "paper_start": 0,
+      "paper_end": 10
+    },
+    {
+      "strip_id": "S-b2",
+      "catalog_revision": "r2",
+      "section_id": "P2",
+      "label_start": 350,
+      "label_end": 390,
+      "paper_start": 0,
+      "paper_end": 10
+    },
+    {
+      "strip_id": "S-dup-p1",
+      "catalog_revision": "r1",
+      "section_id": "P1",
+      "label_start": 340,
+      "label_end": 360,
+      "paper_start": 0,
+      "paper_end": 10
+    },
+    {
+      "strip_id": "S-dup-p2",
+      "catalog_revision": "r1",
+      "section_id": "P2",
+      "label_start": 340,
+      "label_end": 360,
+      "paper_start": 0,
+      "paper_end": 10
+    }
+  ]
+}

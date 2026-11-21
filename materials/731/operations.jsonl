@@ -1,0 +1,24 @@
+{"op": "resolve_and_inspect", "file": "inspections_pq.json", "report_id": "R1"}
+{"op": "resolve_and_inspect", "file": "inspections_b.json", "report_id": "R2"}
+{"op": "resolve_and_inspect", "file": "inspections_dup.json", "report_id": "R3"}
+{"op": "define_panel", "file": "panels_g1.json"}
+{"op": "issue_sheet", "file": "sheet_t1.json"}
+{"op": "typeset_line", "file": "line_ln1.json"}
+{"op": "typeset_line", "file": "line_ln2.json"}
+{"op": "issue_sheet", "file": "sheet_t2.json"}
+{"op": "typeset_line", "file": "line_ln3.json"}
+{"op": "typeset_line", "file": "line_ln5.json"}
+{"op": "typeset_line", "file": "line_ln4.json"}
+{"op": "typeset_line", "file": "line_ln6.json"}
+{"op": "issue_sheet", "file": "sheet_t3.json"}
+{"op": "freeze_plate", "plate_id": "PLATE-1", "batch": "2026-11-20", "lines": ["LN1", "LN2", "LN3", "LN5"]}
+{"op": "revise_panel", "file": "panels_g2.json"}
+{"op": "reissue_plate", "plate_id": "PLATE-1", "panel_revision": "g2", "new_plate_id": "PLATE-2", "batch": "2026-11-21"}
+{"op": "recheck_sheet", "sheet_id": "T1"}
+{"op": "reprint_sheet", "sheet_id": "T1"}
+{"op": "revise_chainage", "file": "revision.json"}
+{"op": "define_panel", "file": "panels_g3.json"}
+{"op": "issue_sheet", "file": "sheet_t4.json"}
+{"op": "resolve_and_inspect", "file": "inspections_b.json", "report_id": "R4"}
+{"op": "issue_sheet", "file": "sheet_t5.json"}
+{"op": "recheck_sheet", "sheet_id": "T1"}

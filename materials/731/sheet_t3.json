@@ -1,0 +1,13 @@
+{
+  "sheet_id": "T3",
+  "report_id": "R3",
+  "panel_id": "G1",
+  "panel_revision": "g1",
+  "entries": [
+    {"note_id": "N5", "strip_id": "S-dup-p1", "asset_id": "A"},
+    {"note_id": "N6", "strip_id": "S-dup-p2", "asset_id": "C"},
+    {"note_id": "N7", "strip_id": "S-dup-p1", "asset_id": "C"},
+    {"note_id": "N8", "strip_id": "S-dup-p1", "asset_id": "B"},
+    {"note_id": "N9", "strip_id": "S-nope", "asset_id": "A"}
+  ]
+}

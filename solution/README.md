@@ -91,6 +91,59 @@ The facility identities and physical positions are unchanged; only the
 label→physical mapping moved. Old report R1 keeps explaining the original
 labels and positions (`stale=true` once r2 is current).
 
+## Guide panels, proof sheets and the typesetting bench
+
+Three further modules extend the catalog into the print room (materials in
+`materials/731`, runner `run_press.py`):
+
+* **`panel_catalog.py`** (catalog side; depends on `chainage_catalog`
+  only). A *panel* has its **own revision sequence**, independent of the
+  route catalog revisions. Each panel revision is a set of named *strips*;
+  a strip binds a catalog revision, a section and a legal half-open label
+  window (validated with the catalog's own exact span conversion), and
+  maps the window's physical positions proportionally onto the paper
+  x-axis between two distinct paper points — forward (顺排) or reverse
+  (逆排). Projection is exact Fraction arithmetic on **physical**
+  positions, so a label-base revision can never move an old anchor: a
+  strip bound to `r1` keeps mapping through `r1` even after `r2` exists.
+  `(panel_id, panel_revision)` is content-addressed; old revisions are
+  retained, which is what makes offline re-checks possible.
+* **`press_room.py`** (glue; depends on both sides). An *annotation sheet*
+  names a report, a panel revision and entries `(note_id, strip_id,
+  asset_id)`. Each entry is checked against the facts and either accepted
+  (anchor + projection basis delivered by the catalog side) or rejected
+  with a concrete reason: `unknown_strip`, `revision_mismatch`,
+  `facility_not_in_report`, `outside_window`. Sheets are
+  content-addressed like reports; `verify_sheet` rebuilds an old proof
+  from the retained report/catalog/panel revisions and compares
+  fingerprints (offline re-check), and `reprint` renders it again
+  (复印旧单). A *plate* freezes a batch of typeset lines (daily batch);
+  after a small paper change `reissue_plate` re-typesets **only the lines
+  whose anchors actually moved** and carries the rest into the new plate.
+* **`typeset_bench.py`** (pure layout; no route knowledge). One print
+  line: width, half-open forbidden zones, ≤ 18 items with ≤ 3 placements
+  each. A placement is a half-open glyph box relative to the item's
+  anchor. Required items must be placed; optional items carry a positive
+  integer value and appear at most once. Boxes must stay in the line
+  width, and must not intersect each other or the forbidden zones —
+  touching is allowed. The bench maximises total value exactly
+  (branch-and-bound; ties broken by the lexicographically smallest
+  ascending `(note_id, placement)` list) and, when impossible, says why:
+  a required item with no paper-legal placement, or an irreducible set of
+  required items whose boxes cannot coexist.
+
+The worked example from the task is reproduced end to end: strip `[0,10)`
+forward to paper `0..10`, P@2 required, Q@5 worth 4, boxes
+`[anchor, anchor+3)` — both print (they touch at 5). With forbidden
+`[7,8)` only P prints. After the strip's paper end moves to `8` (panel
+`g2`), the anchors become `8/5` and `4`, the boxes overlap, and the
+re-issued line again prints only P.
+
+```bash
+python3 solution/run_press.py                    # in-memory
+python3 solution/run_press.py --db press.db      # durable (resumable)
+```
+
 ## Running
 
 ```bash
